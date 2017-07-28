@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div id="my-div">
+    </div>
+
+
+    <script>
+      var myDiv = document.getElementById("my-div");
+
+      var createElement = document.createElement("p");
+      var textNode = document.createTextNode("lorem ipsum is my favorite line of text ever written");
+
+      createElement.appendChild(textNode);
+      console.log(createElement.appendChild(textNode));
+
+      myDiv.appendChild(createElement);
+    </script>
+
+  </body>
+</html>

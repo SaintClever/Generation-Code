@@ -1,0 +1,53 @@
+body {
+  font-family: "Coming Soon", "Permanent Marker", cursive;
+}
+
+#input {
+  outline: none; /*remove outline*/
+  border: none;
+  border-bottom: 1px solid grey;
+  width: 25%;
+  transition: .5s;
+}
+
+#input:hover {
+  width: 50%;
+}
+
+.normalize {
+  outline-color: white;
+  background-color: white;
+}
+
+.error {
+  outline-color: red;
+  background-color: pink;
+}
+
+.checkbox {
+  float: left;
+}
+
+#ul {
+  list-style-type: none;
+}
+
+#btn {
+  border: none;
+  color: white;
+  background-color: teal;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/*For use with JavaScript checkMate Method();*/
+/*.strike {
+  text-decoration: line-through;
+  font-style: italic;
+}*/
+
+/*NO JAVASCRIPT NEEDED*/
+.checkbox:checked + li {
+text-decoration: line-through;
+font-style: italic;
+}

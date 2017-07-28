@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      #red {
+        width: 33%;
+        height: 15%;
+        background-color: red;
+        color: white;
+        text-align: center;
+        display: inline-block;
+      }
+
+      #blue {
+        background-color: blue;
+        width: 33%;
+        height: 15%;
+        color: white;
+        text-align: center;
+        display: inline-block;
+      }
+
+      #green {
+        background-color: green;
+        width: 33%;
+        height: 15%;
+        color: white;
+        text-align: center;
+        display: inline-block;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="red" onClick="alert('Event handler: onclick method')">
+      <h2>onClick</h2>
+    </div>
+
+    <div id="blue" onMouseover="alert('Event handler: onmouseover method')">
+      <h2>onMouseover</h2>
+    </div>
+
+    <div id="green" onMouseout="alert('Event handler: onmouseout')">
+      <h2>onMouseout</h2>
+    </div>
+  </body>
+</html>

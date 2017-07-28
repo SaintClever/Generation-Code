@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <h1 class="my-title">My header goes here</h1>
+
+    <p class="my-title">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <span>commodo</span> consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    <h1>My other header</h1>
+    <ul>
+      <li>Donut</li>
+      <li class="mexican">Burrito</li>
+      <li>Cereal</li>
+    </ul>
+
+    <p>I also love <span>Tacos</span>!!!</p>
+    <script>
+
+      let myTitle = document.getElementsByClassName("my-title");
+
+      console.log(myTitle[0]);
+      console.log(myTitle[1]);
+
+      //Regardless of if its 1 or more than 1 item within a class we always have to write the index number of the node.
+      let myFood = document.getElementsByClassName("mexican");
+      console.log(myFood[0]);
+      
+    </script>
+  </body>
+</html>

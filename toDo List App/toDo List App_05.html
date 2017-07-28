@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+
+    h1 {
+      color: grey;
+      font-family: sans-serif;
+    }
+
+    #container {
+      width: 50%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #my-ul li {
+      list-style-type: square;
+      line-height: 45px;
+      color: grey;
+      font-family: sans-serif;
+      font-size: 1.5em;
+    }
+
+    #user-input {
+      width: 75%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 3px solid #ccc;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none;
+
+      /*TEXT*/
+      color: grey;
+      font-family: sans-serif;
+      font-size: 1.25em;
+    }
+
+    #user-input:focus {
+      border: none;
+      border-bottom: 3px solid #555;
+    }
+
+    .line-through {
+      text-decoration: line-through;
+    }
+
+    .remove {
+      text-decoration: none;
+    }
+
+    p {
+      color: grey;
+      font-family: sans-serif;
+    }
+
+    span {
+      font-weight: 900;
+    }
+
+    #del {
+      color: white;
+      background-color: black;
+      border: none;
+      padding: 5px;
+    }
+
+    #del:hover {
+      color: white;
+      background-color: red;
+      transition: .5s;
+    }
+
+    #anime {
+      width: 50%;
+    }
+    </style>
+  </head>
+  <body>
+
+    <div id="container">
+      <h1>Todo List</h1>
+      <p><span>Double click</span> to <span>mark task</span> as complete, make a <span>quick edit</span> or <span>delete</span> task</p>
+      <p>During edit mode you can <span>cancel quick edit</span> by pressing the <span>esc key</span></p>
+      <p><span>Click</span> on marked task to <span>set as incompleted</span></p>
+      <br>
+      <ul id="my-ul">
+        <input id="user-input" type="text" placeholder="Enter your task" autofocus>
+      </ul>
+    </div>
+
+    <script>
+      // Create task =========================================
+      let ul = document.getElementById("my-ul");
+      let input = document.getElementById("user-input");
+      let createList = document.createElement("li");
+      let btn = document.createElement("input"); // if delete btn element is a input
+      // let btnText = document.createTextNode("Delete"); // if delete btn element is a button
+
+      function createTask() {
+        let textNode = document.createTextNode(input.value); // create text from the input.value
+        if (event.keyCode === 13) {
+          ul.removeChild(input); // remove our input from our ul
+
+          if (input.value !== "") {
+            let createList = document.createElement("li"); // FIX ME
+            createList.setAttribute("class", "original");
+            createList.appendChild(textNode);
+            ul.append(createList);
+            input.value = ""; // clear value
+          }
+
+          ul.appendChild(input);
+          input.focus(); // autofocus on our input
+        }
+      }
+
+      document.addEventListener("keydown", function() {
+        createTask();
+      });
+
+
+      // Copy pre-existing task =======================================
+      let li = document.getElementsByTagName("li");
+      let edit = document.createElement("input"); // create a new input to edit or current task
+
+      function editTask() {
+        for (let i = 0; i < li.length; i++) {
+          li[i].ondblclick = function() {
+            edit.setAttribute("id", "user-input"); // asign attribute for styling purposes
+            edit.setAttribute("type", "text"); // apply attribute for HTML syntax purposes
+            edit.setAttribute("placeholder", "Enter another task");
+            edit.setAttribute("autofocus", "");
+
+            btn.setAttribute("id", "del");
+            btn.setAttribute("type", "button"); // if delete btn element is a input
+            btn.setAttribute("value", "Delete"); // if delete btn element is a input
+            // btn.appendChild(btnText); // if delete btn element is a button
+            ul.insertBefore(btn, this.nextSibling);
+
+            if (event.keyCode === 13) {
+              ul.removeChild(btn);
+            }
+            console.log(btn);
+            this.className = "line-through";
+            edit.value = this.innerHTML; // preinput my text into my new input field
+            ul.insertBefore(edit, this.nextSibling); // append it below the item clicked on
+            input.style.display = "none"; // hide our input below
+            edit.focus();
+          }
+          li[i].onclick = function() {
+            this.className = "remove";
+          }
+        }
+      }
+
+      document.addEventListener("mouseover", function() {
+        editTask();
+      });
+
+
+      // Delete ========================================================
+      var gif = document.createElement("img");
+      gif.setAttribute("src", "bomb.gif");
+      gif.setAttribute("id", "anime");
+      console.log(gif);
+
+      function deleteTask() {
+        for (let i = 0; i < li.length; i++) {
+          btn.onclick = function() {
+
+            ul.removeChild(this.previousSibling.previousSibling);
+            ul.removeChild(this.previousSibling);
+            ul.removeChild(this);
+
+            edit.innerHTML = gif;
+            edit.value = this.innerHTML; // preinput my text into my new input field
+            ul.insertBefore(edit, this.nextSibling); // append it below the item clicked on
+            input.style.display = "none"; // hide our input below
+            edit.focus();
+          }
+        }
+      }
+
+      document.addEventListener("click", function() {
+        deleteTask();
+      });
+
+      // Append new task to bottom ======================================
+      function appendNew() {
+        if (event.keyCode === 27) { // Removes quick edit option and appends edit to bottom
+          ul.removeChild(btn);
+          edit.setAttribute("place", "Enter your task");
+          edit.value = "";
+          ul.appendChild(edit);
+          edit.focus();
+        } else if (event.keyCode === 13) { // if the keyCode 13 is pressed
+          let newli = document.createElement("li"); // create a <li> tag
+          // console.log(createList);
+          newli.setAttribute("class", "edited");
+          // console.log(edit.value);
+          newli.innerHTML = edit.value; // set our new <li> html to the value of our input called edit
+          // console.log(newli);
+
+          if (newli.innerHTML !== "") { // if our li is not equivalent to a empty <li> append it
+            ul.append(newli);
+            // console.log(newli);
+            ul.removeChild(edit);
+            setTimeout(function() {
+              edit.value = "";
+              ul.appendChild(edit);
+              ul.appendChild(btn);
+              ul.removeChild(btn);
+              edit.focus(); // return our focus back on input
+            }, 50); // set it to 1 10th of a second / a decisecond.
+          }
+        }
+      }
+
+      document.addEventListener("keydown", function() {
+        appendNew();
+      });
+    </script>
+  </body>
+</html>

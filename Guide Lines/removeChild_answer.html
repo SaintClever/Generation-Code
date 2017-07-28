@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <ul id="my-list">
+      <li>Coconut Water</li>
+      <li>Sugar</li>
+      <li id="remove">This doesnt belog here. lets remove it</li>
+      <li>Spice</li>
+      <li>Cheesy Fries</li>
+    </ul>
+
+
+    <button id="btn">Remove Item</button>
+    <script>
+
+      var myList = document.getElementById("my-list");
+      var removeItem = document.getElementById("remove");
+      var btn = document.getElementById("btn");
+
+      function removeNow() {
+        myList.removeChild(removeItem);
+        console.log(myList);
+      }
+
+      btn.onclick = removeNow;
+
+      // or ==============================================
+
+      // btn.onclick = function() {
+      //   myList.removeChild(removeItem);
+      //   console.log(myList);
+      // }
+      
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <h1>My toDo List</h1>
+
+    <ul id="todo-list">
+      <li>Plan lesson</li>
+      <li>Create lesson practice files</li>
+      <li>Upload files</li>
+      <li>Try to get some sleep</li>
+    </ul>
+
+    <button id="btn">Append Todo</button>
+    <!--
+    Create a button, by either using the input or button tag. style that button with external css.
+    Now create a li element. After you create your li element create text for your li.
+    Append your li to the ul above when the button you created is clicked.
+    -->
+
+    <script>
+      var todo = document.getElementById("todo-list");
+      var btn = document.getElementById("btn");
+
+      function addItem() {
+        var myli = document.createElement("li");
+        console.log(myli);
+
+        var myText = document.createTextNode("Wake up, rinse and repeat");
+
+        myli.appendChild(myText);
+        todo.appendChild(myli);
+      }
+
+      btn.onclick = addItem;
+
+      // or ====================================================
+
+      // btn.onclick = function() {
+      //   var myli = document.createElement("li");
+      //   console.log(myli);
+      //
+      //   var myText = document.createTextNode("Wake up, rinse and repeat");
+      //
+      //   myli.appendChild(myText);
+      //   todo.appendChild(myli);
+      // }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .lineUP {
+      display: inline;
+    }
+
+    /*display:none will not be available in the page and does not occupy any space. visibility:hidden hides an element, but it will still take up the same space as before. The element will be hidden, but still affect the layout. visibility:hidden preserve the space, whereas display:none doesn't preserve the space.*/
+
+    /*display:none doesn't preserve the space.*/
+    .abracadabra_display {
+      display: none;
+    }
+
+    /*visibility:hidden preserve the space*/
+    .abracadabra_visibility {
+      visibility: hidden;
+    }
+
+  </style>
+  <title>display: none</title>
+</head>
+<body>
+  <div>
+    <img id="grumpyCat" src="img/grumpyCat.jpg" alt="grumpyCat" width="50%" onMouseover="reserved();">
+    <h1 class="lineUP">Stay in place</h1>
+  </div>
+
+  <div>
+    <img id="cat" src="img/cat.jpg" alt="cat" width="50%" onMouseover="unreserved();">
+    <h1 class="lineUP">Move over</h1>
+  </div>
+
+  <script>
+    function reserved() {
+      document.getElementById("grumpyCat").className = "abracadabra_visibility";
+    }
+
+    function unreserved() {
+      document.getElementById("cat").className = "abracadabra_display";
+    }
+  </script>
+</body>
+</html>

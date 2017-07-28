@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <ul id="groceries">
+      <li>Bacon</li>
+      <li>Bread</li>
+      <li id="remove">Dirty Socks</li>
+      <li>Cheese</li>
+      <li>Eggs</li>
+    </ul>
+
+    <script>
+      var groceries = document.getElementById("groceries");
+      var dirtySocks = document.getElementById("remove");
+
+      groceries.removeChild(dirtySocks);
+
+    </script>
+  </body>
+</html>

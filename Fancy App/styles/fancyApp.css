@@ -1,0 +1,8 @@
+body {
+  background-color: grey;
+}
+
+.thumbnail {
+  width: 25%;
+  border: 1px solid white;
+}

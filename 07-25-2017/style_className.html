@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .super-size {
+        font-size: 100px;
+      }
+
+      .blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h6 id="big-blue">HELLO</h6>
+
+    <ul>
+      <li>Good Morning</li>
+      <li id="day">Good Day</li>
+      <li>Good Night</li>
+    </ul>
+
+    <script>
+
+      var li = document.getElementById("day");
+      li.style.color = "red";
+
+      var h1 = document.getElementById("big-blue");
+      console.log(h1);
+      h1.className = "super-size";
+      h1.className += " blue";
+
+    </script>
+  </body>
+</html>

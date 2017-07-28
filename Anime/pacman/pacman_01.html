@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+
+    body {
+      background-color: black;
+    }
+
+    #pac-man {
+      width: 0px;
+      height: 0px;
+      border-right: 60px solid transparent;
+      border-top: 60px solid yellow;
+      border-left: 60px solid yellow;
+      border-bottom: 60px solid yellow;
+      border-top-left-radius: 60px;
+      border-top-right-radius: 60px;
+      border-bottom-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+    }
+
+    /*MOUTH*/
+    @keyframes mouthRight {
+      from {
+        border-right: 60px solid yellow;
+      }
+
+      to {
+        border-right: 60px solid transparent;
+      }
+    }
+
+    @keyframes mouthLeft {
+      from {
+        border-left: 60px solid yellow;
+      }
+
+      to {
+        border-left: 60px solid transparent;
+      }
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <div id="pac-man">
+    </div>
+
+    <!--
+      keycode: left 37, up 38, right 39, down 40
+    -->
+
+    <script>
+      let pacman = document.getElementById("pac-man");
+
+      // Mouth =============================================
+      document.addEventListener('keydown', function(myEvent) {
+        console.log(myEvent);
+        console.log(myEvent.keyCode);
+
+        if (myEvent.keyCode === 39) {
+          pacman.style.borderRight = "60px solid transparent";
+          pacman.style.borderLeft = "60px solid yellow";
+          pacman.style.animation = "mouthRight .2s infinite";
+          pacman.style.marginLeft = "100%";
+          pacman.style.marginRight = "initial";
+          // start from beginning or leave as is. "0" is also acceptable
+          pacman.style.transition = "margin-left 5s";
+
+        } else if (myEvent.keyCode === 37) {
+          pacman.style.borderRight = "60px solid yellow";
+          pacman.style.borderLeft = "60px solid transparent";
+          pacman.style.animation = "mouthLeft .2s infinite";
+          pacman.style.marginRight = "100%";
+          pacman.style.marginLeft = "initial";
+          // start from beginning or leave as is. "0" is also acceptable
+        }
+      });
+
+
+      document.addEventListener('keyup', function(myEvent) {
+        console.log(myEvent);
+        console.log(myEvent.keyCode);
+
+        if (myEvent.keyCode === 39) {
+          // pacman.style.marginLeft = "initial";
+          // pacman.style.transition = "margin-left 1000s";
+          // pacman.style.animation = "mouthRight paused";
+
+        } else if (myEvent.keyCode === 37) {
+          // pacman.style.animation = "mouthLeft paused";
+        }
+
+      });
+
+    </script>
+  </body>
+</html>

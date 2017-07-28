@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="JS event handler for an image">
+  <title>JS Image Event Handler</title>
+</head>
+<body>
+
+  <img src="img/cat.jpg" id="kitty">
+
+  <script>
+    function over() {
+      helloKitty.src = "img/grumpyCat.jpg";
+    }
+
+    function out() {
+      helloKitty.src = "img/cat.jpg";
+    }
+
+    let helloKitty = document.getElementById("kitty");
+    helloKitty.onmouseover = over;
+    helloKitty.onmouseout = out;
+
+  </script>
+
+</body>
+</html>

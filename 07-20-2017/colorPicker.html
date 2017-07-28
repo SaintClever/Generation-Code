@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+
+    #pacman {
+      width: 0px;
+      height: 0px;
+      border-right: 60px solid transparent;
+      border-top: 60px solid red;
+      border-left: 60px solid red;
+      border-bottom: 60px solid red;
+      border-top-left-radius: 60px;
+      border-top-right-radius: 60px;
+      border-bottom-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <div id="pacman">
+    </div>
+    <input id="color-picker" type="color"><br>
+    <input id="btn" type="button" value="Click Me">
+
+
+    <script>
+      let colorPicker = document.getElementById("color-picker");
+      let btn = document.getElementById("btn");
+
+      function colors() {
+        console.log(colorPicker.value);
+        let hexColor = colorPicker.value;
+
+        document.body.style.backgroundColor = hexColor;
+      }
+
+      btn.onclick = colors;
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  .black {font-weight:bold;}
+  .normal {font-weight: normal;}
+  </style>
+  <title>className: 00</title>
+</head>
+<body>
+<p id="p1" onClick="boldIt();" onDblClick="unboldIt();">
+Click this sentence.
+</p>
+<script>
+
+function boldIt() {
+  document.getElementById("p1").className = "black";
+}
+
+function unboldIt() {
+  document.getElementById("p1").className = "normal";
+}
+</script>
+</body>
+</html>

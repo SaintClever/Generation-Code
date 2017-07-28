@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .new_first_name {
+      color: red;
+    }
+
+    .new_last_name {
+      font-size: 2.5em;
+    }
+
+    .middle_name {
+      color: blue;
+    }
+
+    .new_middle_name {
+      font-size: 2.5em;
+    }
+  </style>
+  <title>Inline JavaScript: className</title>
+</head>
+<body>
+  <input type="button" value="button" onClick="firstName();"> : <span id="first_name">Nesta</span>
+  <br>
+  <br>
+
+  <input type="button" value="button" onClick="lastName();"> : <span id="last_name">Parchment</span>
+  <br>
+  <br>
+  <br>
+
+  <input type="button" value="Add Additional Class" onClick="middleName();">
+  <br>
+  <br>
+  <span id="middle_name_id" class="middle_name">Saint. Clever</span>
+
+  <script>
+    function firstName() {
+      document.getElementById("first_name").className = "new_first_name";
+    }
+
+    function lastName() {
+      document.getElementById("last_name").className = "new_last_name";
+    }
+
+    // to add additional css styling you have to write += " myClassName"
+    // a plus sign and a space before the class is NEEDED
+    function middleName() {
+      document.getElementById("middle_name_id").className += " new_middle_name";
+    }
+  </script>
+</body>
+</html>

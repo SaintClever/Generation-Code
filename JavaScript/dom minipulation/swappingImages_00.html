@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    span {
+      color: red;
+    }
+  </style>
+  <title>Swapping Images</title>
+</head>
+<body>
+  <h3>Inline JavaScript <span>without</span> a function</h3>
+  <img src="img/cat.jpg" alt="cat" width="50%" onMouseover="src='img/grumpyCat.jpg';" onMouseout="src='img/cat.jpg';">
+  <br>
+  <br>
+
+  <h3>Inline JavaScript <span>with</span> a function</h3>
+  <img id="cat" src="img/cat.jpg" alt="cat" width="50%" onMouseover="grumpyCat();" onMouseout="happyCat();">
+  <br>
+  <br>
+
+  <h3>Inline JavaScript <span>with</span> function <span>arguments</span> for the id, and a new image</h3>
+  <h1>WINNER!!!</h1>
+  <img id="kitty" src="img/cat.jpg" alt="cat" width="50%" onMouseover="newImg(id, 'img/grumpyCat.jpg');" onMouseout="newImg(id, 'img/cat.jpg');">
+
+  <script>
+  // Inline JavaScript with a function
+    function grumpyCat() {
+      document.getElementById("cat").src = "img/grumpyCat.jpg";
+    }
+
+    function happyCat() {
+      document.getElementById("cat").src = "img/cat.jpg";
+    }
+
+    // --------------------------------------------------
+
+    /*** WINNER!!! ***/
+    // Inline JavaScript with function arguments
+    function newImg(myId, myImg) {
+      document.getElementById(myId).src = myImg;
+    }
+  </script>
+</body>
+</html>

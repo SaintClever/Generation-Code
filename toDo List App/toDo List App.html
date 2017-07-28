@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+
+    h1 {
+      color: grey;
+      font-family: sans-serif;
+    }
+
+    #container {
+      width: 50%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #my-ul li {
+      list-style-type: square;
+      line-height: 45px;
+      color: grey;
+      font-family: sans-serif;
+      font-size: 1.5em;
+    }
+
+    #user-input {
+      width: 75%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 3px solid #ccc;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none;
+
+      /*TEXT*/
+      color: grey;
+      font-family: sans-serif;
+      font-size: 1.25em;
+    }
+
+    #user-input:focus {
+      border: none;
+      border-bottom: 3px solid #555;
+    }
+
+    .line-through {
+      text-decoration: line-through;
+    }
+    </style>
+  </head>
+  <body>
+
+    <div id="container">
+      <h1>Todo List</h1>
+      <ul id="my-ul">
+        <input type="text" id="user-input" placeholder="Enter your task" autofocus> <!-- autofocus -->
+      </ul>
+    </div>
+
+    <script>
+
+      // Create task =========================================
+      var ul = document.getElementById("my-ul");
+      var input = document.getElementById("user-input");
+
+      function createTask() {
+        if (event.keyCode === 13) {
+          var textNode = document.createTextNode(input.value);
+          // console.log(input.value);
+          // console.log(textNode);
+
+          ul.removeChild(input);
+
+          if (input.value !== "") {
+            var createList = document.createElement("li");
+            createList.appendChild(textNode);
+            ul.append(createList);
+            input.value = ""; // Clear value
+          }
+
+          ul.appendChild(input);
+          input.focus(); // focus input
+          // console.log(myUl.childNodes[4].childNodes[0]);
+          // console.log(myUl.childNodes[4].value);
+        }
+      }
+
+      // input.onkeypress = function() {
+      //   createTask();
+      // }
+      document.addEventListener("keydown", function() {
+        createTask();
+      });
+
+
+      // Cross-out =======================================
+      var li = document.getElementsByTagName("li");
+      console.log(li);
+
+      function editTask() {
+        console.log(li);
+        for (var i = 0; i < li.length; i++) {
+          li[i].onclick = function() {
+            // this.style.textDecoration = "line-through";
+            this.className = "line-through";
+            ul.appendChild(input);
+          }
+        }
+      }
+
+      // li.onclick = function() {
+      //   editTask();
+      // }
+      document.addEventListener("click", function() {
+        editTask();
+      });
+
+    </script>
+  </body>
+</html>

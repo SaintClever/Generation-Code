@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .pale {color:#ccc;}
+    .blackGround {background-color:black;}
+  </style>
+  <title>className: 01</title>
+</head>
+<body>
+
+<h1 id="head1" class="pale" onMouseover="addBackground();" onMouseout="removeBackground();">
+This is important.
+</h1>
+
+<script>
+
+function addBackground() {
+  document.getElementById("head1").className += " blackGround";
+}
+
+//This clears the added class of addBackground to just the original class "pale"
+function removeBackground() {
+  document.getElementById("head1").className = "pale";
+}
+
+</script>
+</body>
+</html>

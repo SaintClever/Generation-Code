@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+
+    <script>
+      // Concat ===================
+      var a = ["a", "b", "c", "d"];
+      var b = ["e", "f", "g", "h"];
+
+      var test = a + b;
+      console.log(test);
+      console.log(typeof test);
+      console.log(""); // spacing
+
+      var ab = a.concat(b);
+      console.log(ab);
+      console.log(""); // spacing
+
+      // Join ====================
+      var x = ["x", "y", "z"];
+      x = x.join(" - ");
+      console.log(x);
+      console.log(typeof x);
+      console.log(""); // spacing
+
+      // Split ==================
+      x = x.split();
+      console.log(x);
+      console.log(typeof x);
+      console.log(""); // spacing
+
+      // Reverse ================
+      var oneEigthy = [1, 2, 3, 4, 5];
+      oneEigthy.reverse();
+      console.log(oneEigthy);
+      console.log(""); // spacing
+
+      // SUPP - shift, unshift, push, pop
+      var alphabet = ["Cc", "Bb", "Aa"];
+      var myC = alphabet.shift();
+      console.log(myC);
+      console.log(alphabet);
+      console.log(""); // spacing
+
+      var myA = alphabet.pop();
+      console.log(myA);
+      console.log(alphabet);
+      console.log(""); // spacing
+
+      alphabet.unshift(myA);
+      console.log(alphabet);
+      console.log(""); // spacing
+
+      alphabet.push(myC);
+      console.log(alphabet);
+      console.log(""); // spacing
+
+      // Sort ====================
+      var students = ["Rian", "Pauline", "Miguel", "Bo", "Dustin", "Raimon", "Maya", "Ethen", "Chloe", "Karina", "Angelo"];
+
+      students.sort();
+      console.log(students);
+      console.log(""); // spacing
+
+      var luckyNumbers = [100, 5, 7, 21, 39];
+      luckyNumbers.sort();
+      console.log(luckyNumbers);
+
+      // DON'T write this answer down. See if the can solve it
+      luckyNumbers.sort(function(a, b) {
+        return a-b;
+      });
+
+      console.log(luckyNumbers);
+
+    </script>
+  </body>
+</html>

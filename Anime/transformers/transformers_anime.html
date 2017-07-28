@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      body {
+        background-image: url("bg_00.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      ul {
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      li {
+        font-family: fantasy;
+        /*color: grey;*/
+        text-align: center;
+        font-size: 4.5em;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        color: rgba(0,0,0,0.7);
+        text-shadow: 2px 2px 3px rgba(255,255,255,0.2);
+      }
+
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>T</li>
+      <li>R</li>
+      <li>A</li>
+      <li>N</li>
+      <li>S</li>
+      <li>F</li>
+      <li>O</li>
+      <li>R</li>
+      <li>M</li>
+      <li>E</li>
+      <li>R</li>
+      <li>S</li>
+    </ul>
+
+
+    <script>
+      let colors = ["red", "blue", "green", "purple", "yellow", "orange", "pink, teal, white", "lime"];
+
+      let randomColor = colors[Math.floor(Math.random() * colors.length)];
+      console.log(randomColor);
+
+      let myli = document.getElementsByTagName("li");
+      let audio = new Audio("Transformers sound effects_00.mp3");
+      let random = Math.floor(Math.random() * 100);
+
+      for (let i = 0; i < myli.length; i++) {
+        myli[i].onmouseover = function() {
+          console.log(i);
+          audio.play();
+          audio.currentTime = 0;
+          this.style.backgroundColor = randomColor;
+          this.style.transition = "all .5s";
+          this.style.opacity = "0";
+          this.style.transform = "matrix3d(1,1,4,5,4,3,8,9,6,7,4,3,1,2,1,6)";
+          this.style.visibility = "hidden";
+          this.style.margin = random + "px";
+          this.style.borderRadius = "100%";
+        }
+      }
+
+    </script>
+  </body>
+</html>

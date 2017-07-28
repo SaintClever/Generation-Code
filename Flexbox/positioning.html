@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      #header {
+        width: 100%;
+        height: 75px;
+        background-color: black;
+      }
+
+      #icon {
+        width: 50px;
+        padding: 10px 15px;
+        float: left;
+      }
+
+      #navbar ul {
+        margin-top: 0;
+        text-align: right;
+      }
+
+      #navbar li {
+        list-style-type: none;
+        display: inline-block;
+        color: white;
+        padding: 30px 10px;
+      }
+
+      #content {
+        width: 100%;
+      }
+
+      #content h1 {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .pic {
+        float: left;
+        width: 33%;
+        text-align: center;
+      }
+
+      .pic input[type=button] {
+        border: none;
+        color: white;
+        background-color: grey;
+        border-radius: 25px;
+        margin-bottom: 15px;
+      }
+
+      .pic button {
+        border: none;
+        color: white;
+        background-color: grey;
+        border-radius: 25px;
+        margin-bottom: 15px;
+      }
+
+      .pic img {
+        width: 100%;
+      }
+
+      #footer {
+        /*margin-top: 100px;*/
+        width: 100%;
+        height: 75px;
+        background-color: black;
+        position: fixed;
+        bottom: 0;
+      }
+
+      @media only screen and (max-width: 500px) {
+        .pic {
+          width: 100%;
+          margin-bottom: 50px;
+        }
+
+        .pic input[type=button] {
+          font-size: 20px;
+          border: none;
+          color: white;
+          background-color: grey;
+          border-radius: 25px;
+          margin-bottom: 15px;
+          padding: 10px;
+        }
+
+        .pic button {
+          font-size: 20px;
+          border: none;
+          color: white;
+          background-color: grey;
+          border-radius: 25px;
+          margin-bottom: 15px;
+          padding: 10px;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <img id="icon" src="http://www.iconsdb.com/icons/preview/white/apple-xxl.png">
+      <nav id="navbar">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Shop</li>
+          <li>Products</li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="content">
+      <h1>The New Iphone</h1>
+      <div class="pic">
+        <input type="button" value="Shop">
+        <img src="https://www.o2.co.uk/shop/homepage/images/shop15/brand/apple/iphone7/apple-iphone-7-gallery-img-3.jpg">
+      </div>
+      <div class="pic">
+        <button>Shop</button>
+        <img src="https://d1vfs9f7h1rfk4.cloudfront.net/media/apple-iphone-7-plus-red-gallery-img-1.jpg">
+      </div>
+      <div class="pic">
+        <button>Shop</button>
+        <img src="https://www.o2.co.uk/shop/homepage/images/shop15/brand/apple/iphone7/apple-iphone-7-gallery-img-1.jpg">
+      </div>
+    </div>
+
+    <div id="footer">
+    </div>
+  </body>
+</html>

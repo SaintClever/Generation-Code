@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+
+    body {
+      background-image: url("images/pacman_logo.png");
+      background-repeat: no-repeat;
+      background-size: 1000px;
+      background-color: black;
+    }
+
+    #pac-man {
+      width: 0px;
+      height: 0px;
+      border-right: 60px solid transparent;
+      border-top: 60px solid yellow;
+      border-left: 60px solid yellow;
+      border-bottom: 60px solid yellow;
+      border-top-left-radius: 60px;
+      border-top-right-radius: 60px;
+      border-bottom-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+    }
+
+    /*#power-pellets {
+      position: absolute;
+      top: 40px;
+      left: 200px;
+      z-index: -1;
+    }*/
+
+    /*#power-pellets li {
+      width: 25px;
+      height: 25px;
+      background-color: white;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 75px;
+    }*/
+
+    #ghosts {
+      position: absolute;
+      top: 0px;
+      left: 500px;
+    }
+
+    #ghosts li {
+      display: inline;
+    }
+
+    #ghosts li img {
+      width: 125px;
+    }
+    /*MOUTH*/
+    @keyframes mouthRight {
+      from {
+        border-right: 60px solid yellow;
+      }
+
+      to {
+        border-right: 60px solid transparent;
+      }
+    }
+
+    @keyframes mouthLeft {
+      from {
+        border-left: 60px solid yellow;
+      }
+
+      to {
+        border-left: 60px solid transparent;
+      }
+    }
+
+    @keyframes mouthBottom {
+      from {
+        border-bottom: 60px solid yellow;
+      }
+
+      to {
+        border-bottom: 60px solid transparent;
+      }
+    }
+
+    @keyframes mouthTop {
+      from {
+        border-top: 60px solid yellow;
+      }
+
+      to {
+        border-top: 60px solid transparent;
+      }
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <div id="pac-man">
+    </div>
+
+    <ul id="ghosts">
+      <li><img src="images/Blinky.png"></li>
+      <li><img src="images/clyde.png"></li>
+      <li><img src="images/inky.png"></li>
+      <li><img src="images/pinky.png"></li>
+    </ul>
+
+    <!--
+      keycode: left 37, up 38, right 39, down 40
+    -->
+
+    <script>
+      let pacman = document.getElementById("pac-man");
+      let audio = new Audio("Pac-Man Waka Waka Chomp.mp3");
+      let ghosts = document.getElementById("ghosts");
+      let ghostList = ghosts.getElementsByTagName("img");
+      console.log(ghostList);
+
+      // Mouth =============================================
+      document.addEventListener('keydown', function(myEvent) {
+        console.log(myEvent);
+        console.log(myEvent.keyCode);
+
+        // keyCode 39: Move right
+        if (myEvent.keyCode === 39) {
+
+          audio.play();
+          pacman.style.borderRight = "60px solid transparent";
+          pacman.style.borderLeft = "60px solid yellow";
+          pacman.style.borderBottom = "60px solid yellow";
+          pacman.style.borderTop = "60px solid yellow";
+          pacman.style.animation = "mouthRight .2s infinite";
+          pacman.style.marginLeft = "100%";
+          pacman.style.marginRight = "initial";
+          // initial means don't add class or id or start from beginning or leave as is. "0" is also acceptable
+          pacman.style.transition = "margin-left 5s";
+
+        // keyCode 37: Move left
+        } else if (myEvent.keyCode === 37) {
+          audio.play();
+          pacman.style.borderRight = "60px solid yellow";
+          pacman.style.borderLeft = "60px solid transparent";
+          pacman.style.borderBottom = "60px solid yellow";
+          pacman.style.borderTop = "60px solid yellow";
+          pacman.style.animation = "mouthLeft .2s infinite";
+          pacman.style.marginRight = "100%";
+          pacman.style.marginLeft = "initial";
+          // initial means don't add class or id or start from beginning or leave as is. "0" is also acceptable
+        }
+
+      });
+
+
+      // Stop mouth animation
+      document.addEventListener('keyup', function(myEvent) {
+        console.log(myEvent);
+        console.log(myEvent.keyCode);
+
+        if (myEvent.keyCode === 39) {
+          audio.pause();
+          audio.currentTime = 0;
+          pacman.style.animation = "mouthRight paused";
+          pacman.style.marginLeft = "100%";
+          // pacman.style.marginLeft = "initial";
+          // pacman.style.transition = "margin-left 1000s";
+
+
+        } else if (myEvent.keyCode === 37) {
+          audio.pause();
+          audio.currentTime = 0;
+          pacman.style.animation = "mouthLeft paused";
+        }
+
+      });
+
+    </script>
+  </body>
+</html>

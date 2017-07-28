@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>variables &amp; inline JS</title>
+</head>
+<body>
+  <img id="cat" src="img/cat.jpg" alt="cat" width="50%" onMouseover="swap(id, 'img/grumpyCat.jpg');" onMouseout="swap(id, 'img/cat.jpg')">
+
+  <script>
+    function swap(myId, myImg) {
+      var grumpyCat = document.getElementById(myId);
+      grumpyCat.src = myImg;
+    }
+  </script>
+</body>
+</html>

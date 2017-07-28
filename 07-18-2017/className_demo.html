@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .alert {
+        color: red;
+        font-size: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    Danger Will Robinson!!! <span id="danger">Danger!!!</span>
+
+    <button id="btn">Apply Class</button>
+
+    <script>
+      var danger = document.getElementById("danger");
+      var btn = document.getElementById("btn");
+
+      // ===============================================
+      // a function assigned to a btn
+      btn.onclick = function() { // anonymous function
+        danger.className = "alert";
+      }
+
+      // or a function with a name later assigned to a button
+      // function addClass() {
+      //   danger.className = "alert";
+      // }
+      // btn.onclick = addClass;
+      
+    </script>
+  </body>
+</html>

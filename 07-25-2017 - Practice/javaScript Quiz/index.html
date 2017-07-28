@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple JavaScript Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h1>JavaScript Method Quiz</h1>
+        <p>Test your knowledge in <strong>JavaScript fundamental Methods</strong></p>
+      </header>
+      <section>
+        <div id="results"></div> <!-- The results are generated / pushed in this div therefore we leave it empty-->
+        <form name="quizForm" onsubmit="return submitAnswers()">
+          <h3>1. Which JavaScript method do we use to append elements to the end of our Array?</h3>
+          <input type="radio" name="q1" value="a" id="q1a">a. join();<br>
+          <input type="radio" name="q1" value="b" id="q1b">b. push();<br>
+          <input type="radio" name="q1" value="c" id="q1c">c. pop();<br>
+          <input type="radio" name="q1" value="d" id="q1d">d. length();<br>
+
+          <h3>2. Which method is used to remove items off the end of our Array</h3>
+          <input type="radio" name="q2" value="a" id="q2a">a. pop();<br>
+          <input type="radio" name="q2" value="b" id="q2b">b. remove();<br>
+          <input type="radio" name="q2" value="c" id="q2c">c. console.log();<br>
+          <input type="radio" name="q2" value="d" id="q2d">d. href<br>
+
+          <h3>3. How would you append "Hello" to the front of your Array?</h3>
+          <input type="radio" name="q3" value="a" id="q3a">a. shift("Hello");<br>
+          <input type="radio" name="q3" value="b" id="q3b">b. alert("Hello");<br>
+          <input type="radio" name="q3" value="c" id="q3c">c. document.write("Hello");<br>
+          <input type="radio" name="q3" value="d" id="q3d">d. unshift("Hello");<br>
+
+          <h3>4. JavaScript is directly related to the "Java" programming language</h3>
+          <input type="radio" name="q4" value="a" id="q4a">a. True<br>
+          <input type="radio" name="q4" value="b" id="q4a">b. False<br>
+
+          <h3>5. A item is removed from the front of our Array. What method was used?</h3>
+          <input type="radio" name="q5" value="a" id="q5a">a. unshift();<br>
+          <input type="radio" name="q5" value="b" id="q5b">b. concat();<br>
+          <input type="radio" name="q5" value="c" id="q5c">c. join();<br>
+          <input type="radio" name="q5" value="d" id="q5d">d. shift();<br>
+          <br><br>
+
+          <input type="submit" value="Submit Answers">
+         </form>
+      </section>
+      <footer>
+        <p>Copyright &copy; 2015, All rights reserved</p>
+      </footer>
+    </di>
+  </body>
+</html>

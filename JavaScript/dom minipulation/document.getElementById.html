@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <h1>Hello World!!!</h1>
+    <p id="latin-text">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <span>veniam</span>, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    <h3>Dislikes</h3>
+    <ul>
+      <li>Subway is horrible</li>
+      <li>Blimpies is ok but out of business</li>
+      <li>Dominos? No thanks</li>
+    </ul>
+
+    <h2 onClick="changeHTML();">Hello Universe: Click Me</h2>
+    <p id="change-me">
+      <span>Lorem ipsum</span> dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    <ol>
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+    </ol>
+
+    <script>
+
+      let myId = document.getElementById("latin-text");
+      console.log(myId);
+      // shows us our HTML within our tag or changes it
+      console.log(myId.innerHTML);
+      console.log(myId.innerHTML = "<h1>Some new text here</h1>");
+
+      // ---------------------------------------------------------
+
+      let changeMe = document.getElementById("change-me");
+      console.log(changeMe);
+      // So now explian functions
+      function changeHTML() {
+        changeMe.innerHTML = "<h1>Did it work?</h1>";
+      }
+
+    </script>
+  </body>
+</html>
